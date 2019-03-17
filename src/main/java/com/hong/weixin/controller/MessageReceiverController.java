@@ -26,8 +26,8 @@ public class MessageReceiverController {
 		// 接着把排序后的两个元素拼接成一个新的String
 		// 使用SHA-1算法对新的String进行加密
 		// 最后把加密的结果跟signature进行比较，如果相同表示验证通过，返回echostr
-
 		// 原路返回echostr的值，返回以后微信公众号平台就能够认为：服务器对接成功
+		System.out.println("hello kemao!");
 		return echostr;
 	}
 }
