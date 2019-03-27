@@ -1,5 +1,7 @@
 package com.hong.weixin.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 // @RequestMapping表示的含义：URL跟控制器的关系映射
 @RequestMapping("/hongzw/weixin/receiver")
 public class MessageReceiverController {
+	
+	private static final Logger LOG = LoggerFactory.getLogger(MessageReceiverController.class);
 
 	@GetMapping // 只处理GET请求
 	public String echo(//
@@ -32,8 +36,13 @@ public class MessageReceiverController {
 		return echostr;
 	}
 	
-	public String onMessage(@RequestBody String xml) {
-		
+	public String onMessage(
+			@RequestParam("signature") String signature, //
+			@RequestParam("timestamp") String timestamp, //
+			@RequestParam("nonce") String nonce, //
+			@RequestBody String xml) {
+		//收到消息
+		LOG.trace("收到的消息原文:\n{}\n----------------------------------------",xml);
 		
 		return "success";	
 	}
