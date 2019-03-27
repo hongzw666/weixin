@@ -19,7 +19,7 @@
 	<!-- 项目本身的日志配置 -->
 	<!-- trace可以输出的信息最详细，从详细到不那么详细， -->
 	<!-- 依次是：trace > debug > info > warn > error > off -->
-	<logger name="org.fkjava" level="trace" />
+	<logger name="com.hong" level="trace" />
 
 	<root level="error">
 		<appender-ref ref="CONSOLE" />
