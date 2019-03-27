@@ -1,6 +1,7 @@
 package com.hong.weixin.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,6 +30,12 @@ public class MessageReceiverController {
 		// 原路返回echostr的值，返回以后微信公众号平台就能够认为：服务器对接成功
 		System.out.println("hello kemao!");
 		return echostr;
+	}
+	
+	public String onMessage(@RequestBody String xml) {
+		
+		
+		return "success";	
 	}
 }
 
