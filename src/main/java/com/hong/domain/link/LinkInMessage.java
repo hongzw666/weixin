@@ -9,6 +9,10 @@ import com.hong.domain.InMessage;
 @XmlAccessorType(XmlAccessType.FIELD) // JAXB从字段获取配置信息
 @XmlRootElement(name = "xml") // JAXB读取XML时根元素名称
 public class LinkInMessage extends InMessage {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@XmlElement(name = "Title")
 	private String Title;
 	

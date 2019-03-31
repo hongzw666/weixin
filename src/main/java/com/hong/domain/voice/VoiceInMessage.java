@@ -9,6 +9,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType(XmlAccessType.FIELD) // JAXB从字段获取配置信息
 @XmlRootElement(name = "xml") // JAXB读取XML时根元素名称
 public class VoiceInMessage extends InMessage {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 		@XmlElement(name = "MediaId")
 		private String mediaId;
 		
