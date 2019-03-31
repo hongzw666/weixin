@@ -89,6 +89,7 @@
 
 	<build>
 		<plugins>
+			<!-- Spring Boot的Maven插件，用于在打包的时候把所有相关jar文件打包在一起 -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>

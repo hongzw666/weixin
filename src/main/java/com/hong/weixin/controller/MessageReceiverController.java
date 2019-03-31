@@ -56,7 +56,7 @@ public class MessageReceiverController {
 		// <MsgType><![CDATA[text]]></MsgType>
 		String type = xml.substring(xml.indexOf("<MsgType><![CDATA[") + 18);
 		type = type.substring(0, type.indexOf("]]></MsgType>"));
-		Class<InMessage> cla = MessageTypeMapper.getClass(type);
+		Class<InMessage> cla = MessageTypeMapper.getClass(type); 
 		
 		//使用JAXB将xml转化为java对象
 		InMessage inMessage = JAXB.unmarshal(new StringReader(xml), cla);
