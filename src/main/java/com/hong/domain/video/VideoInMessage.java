@@ -42,7 +42,7 @@ public class VideoInMessage  extends InMessage {
 	@Override
 	public String toString() {
 		return "VideoInMessage [mediaId=" + mediaId + ", thumbMediaId=" + thumbMediaId + ", getToUserName()="
-				+ getToUserName() + ", getFormUserName()=" + getFormUserName() + ", getCreateTime()=" + getCreateTime()
+				+ getToUserName() + ", getFormUserName()=" + getFromUserName() + ", getCreateTime()=" + getCreateTime()
 				+ ", getMsgType()=" + getMsgType() + ", getMsgId()=" + getMsgId() + "]";
 	}
 	

@@ -10,27 +10,31 @@ import com.hong.domain.InMessage;
 @XmlAccessorType(XmlAccessType.FIELD) // JAXB从字段获取配置信息
 @XmlRootElement(name = "xml") // JAXB读取XML时根元素名称
 public class TextInMessage extends InMessage {
-	@XmlElement(name = "Comtent")
-	private String comtent;
+	
+	@XmlElement(name = "Content")
+	private String content;
 	
 	public TextInMessage() {
 		super.setMsgType("text");
 	}
 
-	public String getComtent() {
-		return comtent;
+	public String getContent() {
+		return content;
 	}
 
-	public void setComtent(String comtent) {
-		this.comtent = comtent;
+	public void setContent(String content) {
+		this.content = content;
 	}
 
 	@Override
 	public String toString() {
-		return "TextInMessage [comtent=" + comtent + ", getToUserName()=" + getToUserName() + ", getFormUserName()="
-				+ getFormUserName() + ", getCreateTime()=" + getCreateTime() + ", getMsgType()=" + getMsgType()
+		return "TextInMessage [content=" + content + ", getToUserName()=" + getToUserName() + ", getFormUserName()="
+				+ getFromUserName() + ", getCreateTime()=" + getCreateTime() + ", getMsgType()=" + getMsgType()
 				+ ", getMsgId()=" + getMsgId() + "]";
 	}
+
+
+
 	
 	
 }

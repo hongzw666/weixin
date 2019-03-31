@@ -60,7 +60,7 @@ public class LocationInMessage  extends InMessage {
 	public String toString() {
 		return "LocationInMessage [location_X=" + location_X + ", location_Y=" + location_Y + ", scale=" + scale
 				+ ", label=" + label + ", getToUserName()=" + getToUserName() + ", getFormUserName()="
-				+ getFormUserName() + ", getCreateTime()=" + getCreateTime() + ", getMsgType()=" + getMsgType()
+				+ getFromUserName() + ", getCreateTime()=" + getCreateTime() + ", getMsgType()=" + getMsgType()
 				+ ", getMsgId()=" + getMsgId() + "]";
 	}
 	

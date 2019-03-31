@@ -49,7 +49,7 @@ public class LinkInMessage extends InMessage {
 	@Override
 	public String toString() {
 		return "LinkInMessage [Title=" + Title + ", description=" + description + ", url=" + url + ", getToUserName()="
-				+ getToUserName() + ", getFormUserName()=" + getFormUserName() + ", getCreateTime()=" + getCreateTime()
+				+ getToUserName() + ", getFormUserName()=" + getFromUserName() + ", getCreateTime()=" + getCreateTime()
 				+ ", getMsgType()=" + getMsgType() + ", getMsgId()=" + getMsgId() + "]";
 	}
 	

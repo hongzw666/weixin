@@ -44,7 +44,7 @@ public class ImageInMessage  extends InMessage {
 	@Override
 	public String toString() {
 		return "ImageInMessage [url=" + url + ", mediaId=" + mediaId + ", getToUserName()=" + getToUserName()
-				+ ", getFormUserName()=" + getFormUserName() + ", getCreateTime()=" + getCreateTime()
+				+ ", getFormUserName()=" + getFromUserName() + ", getCreateTime()=" + getCreateTime()
 				+ ", getMsgType()=" + getMsgType() + ", getMsgId()=" + getMsgId() + "]";
 	}
 

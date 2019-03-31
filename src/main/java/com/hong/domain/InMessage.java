@@ -14,8 +14,8 @@ public abstract class InMessage {
 	@XmlElement(name = "ToUserName")
 	private String toUserName;
 	
-	@XmlElement(name = "FormUserName")
-	private String formUserName;
+	@XmlElement(name = "FromUserName")
+	private String fromUserName;
 	
 	@XmlElement(name = "CreateTime")
 	private long createTime;
@@ -34,12 +34,14 @@ public abstract class InMessage {
 		this.toUserName = toUserName;
 	}
 
-	public String getFormUserName() {
-		return formUserName;
+	
+
+	public String getFromUserName() {
+		return fromUserName;
 	}
 
-	public void setFormUserName(String formUserName) {
-		this.formUserName = formUserName;
+	public void setFromUserName(String fromUserName) {
+		this.fromUserName = fromUserName;
 	}
 
 	public long getCreateTime() {
