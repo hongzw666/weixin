@@ -1,5 +1,9 @@
 package com.hong.weixin.controller;
 
+import java.io.StringReader;
+
+import javax.xml.bind.JAXB;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,6 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.hong.domain.InMessage;
+import com.hong.weixin.service.MessageTypeMapper;
 
 // 控制器 : 负责接收用户的请求参数、调用业务逻辑层代码、返回视图/结果给客户端（浏览器）
 // @Controller  基于JSP的控制器
@@ -36,6 +43,7 @@ public class MessageReceiverController {
 		System.out.println("hello kemao!");
 		return echostr;
 	}
+	
 	@PostMapping
 	public String onMessage(
 			@RequestParam("signature") String signature, //
@@ -44,6 +52,17 @@ public class MessageReceiverController {
 			@RequestBody String xml) {
 		//收到消息
 		LOG.trace("收到的消息原文:\n{}\n----------------------------------------",xml);
+		
+		//截取消息类型
+		String type = xml.substring(0);
+		Class<InMessage> cla = MessageTypeMapper.getClass(type);
+		//使用JAXB将xml转化为java对象
+		InMessage inMessage = JAXB.unmarshal(new StringReader(xml), cla);
+		LOG.debug("转换得到的消息对象\n{}\n",inMessage.toString());
+		
+		
+		
+		
 		
 		return "success";	
 	}
