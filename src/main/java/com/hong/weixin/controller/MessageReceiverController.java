@@ -52,10 +52,12 @@ public class MessageReceiverController {
 			@RequestBody String xml) {
 		//收到消息
 		LOG.trace("收到的消息原文:\n{}\n----------------------------------------",xml);
-		
-		//截取消息类型
-		String type = xml.substring(0);
+		// 截取消息类型
+		// <MsgType><![CDATA[text]]></MsgType>
+		String type = xml.substring(xml.indexOf("<MsgType><![CDATA[") + 18);
+		type = type.substring(0, type.indexOf("]]></MsgType>"));
 		Class<InMessage> cla = MessageTypeMapper.getClass(type);
+		
 		//使用JAXB将xml转化为java对象
 		InMessage inMessage = JAXB.unmarshal(new StringReader(xml), cla);
 		LOG.debug("转换得到的消息对象\n{}\n",inMessage.toString());
