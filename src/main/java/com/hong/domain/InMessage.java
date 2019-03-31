@@ -1,21 +1,29 @@
 package com.hong.domain;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
+
+@XmlAccessorType(XmlAccessType.FIELD) // JAXB从字段获取配置信息
+@XmlRootElement(name = "xml") // JAXB读取XML时根元素名称
 public abstract class InMessage {
-	@JsonProperty("ToUserName")
+	
+	private static final long serialVersionUID = 1L;
+	@XmlElement(name = "ToUserName")
 	private String toUserName;
 	
-	@JsonProperty("FormUserName")
+	@XmlElement(name = "FormUserName")
 	private String formUserName;
 	
-	@JsonProperty("CreateTime")
+	@XmlElement(name = "CreateTime")
 	private long createTime;
 	
-	@JsonProperty("MsgType")
+	@XmlElement(name = "MsgType")
 	private String msgType;
 	
-	@JsonProperty("MsgId")
+	@XmlElement(name = "MsgId")
 	private Long msgId;
 
 	public String getToUserName() {
@@ -58,10 +66,5 @@ public abstract class InMessage {
 		this.msgId = msgId;
 	}
 
-	@Override
-	public String toString() {
-		return "InMessage [toUserName=" + toUserName + ", formUserName=" + formUserName + ", createTime=" + createTime
-				+ ", msgType=" + msgType + ", msgId=" + msgId + "]";
-	}
 	
 }

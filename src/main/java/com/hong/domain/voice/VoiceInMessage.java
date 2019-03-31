@@ -1,16 +1,21 @@
 package com.hong.domain.voice;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.hong.domain.InMessage;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
+@XmlAccessorType(XmlAccessType.FIELD) // JAXB从字段获取配置信息
+@XmlRootElement(name = "xml") // JAXB读取XML时根元素名称
 public class VoiceInMessage extends InMessage {
-		@JsonProperty("MediaId")
+		@XmlElement(name = "MediaId")
 		private String mediaId;
 		
-		@JsonProperty("Format")
+		@XmlElement(name = "Format")
 		private String format;
 		
-		@JsonProperty("Recognition")
+		@XmlElement(name = "Recognition")
 		private String recognition;
 		
 		public VoiceInMessage() {

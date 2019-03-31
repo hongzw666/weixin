@@ -1,19 +1,23 @@
 package com.hong.domain.location;
-
-import com.fasterxml.jackson.annotation.JsonProperty;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 import com.hong.domain.InMessage;
 
+@XmlAccessorType(XmlAccessType.FIELD) // JAXB从字段获取配置信息
+@XmlRootElement(name = "xml") // JAXB读取XML时根元素名称
 public class LocationInMessage  extends InMessage {
-	@JsonProperty("Location_X")
+	@XmlElement(name = "Location_X")
 	private String location_X;
 	
-	@JsonProperty("Location_Y")
+	@XmlElement(name = "Location_Y")
 	private String location_Y;
 	
-	@JsonProperty("Scale")
+	@XmlElement(name = "Scale")
 	private String scale;
 	
-	@JsonProperty("Label")
+	@XmlElement(name = "Label")
 	private String label;
 	
 	public LocationInMessage() {
