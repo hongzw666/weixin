@@ -61,11 +61,7 @@ public class MessageReceiverController {
 		//使用JAXB将xml转化为java对象
 		InMessage inMessage = JAXB.unmarshal(new StringReader(xml), cla);
 		LOG.debug("转换得到的消息对象\n{}\n",inMessage.toString());
-		
-		
-		
-		
-		
+			
 		return "success";	
 	}
 }
