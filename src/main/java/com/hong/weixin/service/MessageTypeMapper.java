@@ -5,6 +5,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import com.hong.domain.InMessage;
 import com.hong.domain.Image.ImageInMessage;
+import com.hong.domain.event.EventInMessage;
 import com.hong.domain.link.LinkInMessage;
 import com.hong.domain.location.LocationInMessage;
 import com.hong.domain.shortvideo.ShortvideoInMessage;
@@ -23,6 +24,7 @@ public class MessageTypeMapper {
 		typeMap.put("shortvideo", ShortvideoInMessage.class);
 		typeMap.put("location", LocationInMessage.class);
 		typeMap.put("link", LinkInMessage.class);
+		typeMap.put("event", EventInMessage.class);
 	}
 	// 通过消息类型获取对应的类
 	@SuppressWarnings("unchecked")
