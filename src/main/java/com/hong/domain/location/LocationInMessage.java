@@ -3,6 +3,8 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.hong.domain.InMessage;
 
 @XmlAccessorType(XmlAccessType.FIELD) // JAXB从字段获取配置信息
@@ -14,15 +16,20 @@ public class LocationInMessage  extends InMessage {
 	private static final long serialVersionUID = 1L;
 
 	@XmlElement(name = "Location_X")
+	@JsonProperty("Location_X")
+	
 	private String location_X;
 	
 	@XmlElement(name = "Location_Y")
+	@JsonProperty("Location_Y")
 	private String location_Y;
 	
 	@XmlElement(name = "Scale")
+	@JsonProperty("Scale")
 	private String scale;
 	
 	@XmlElement(name = "Label")
+	@JsonProperty("Label")
 	private String label;
 	
 	public LocationInMessage() {

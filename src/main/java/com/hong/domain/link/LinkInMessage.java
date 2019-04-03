@@ -4,6 +4,8 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.hong.domain.InMessage;
 
 @XmlAccessorType(XmlAccessType.FIELD) // JAXB从字段获取配置信息
@@ -14,12 +16,16 @@ public class LinkInMessage extends InMessage {
 	 */
 	private static final long serialVersionUID = 1L;
 	@XmlElement(name = "Title")
+	@JsonProperty("Title")
+	
 	private String Title;
 	
 	@XmlElement(name = "Description")
+	@JsonProperty("Description")
 	private String description;
 	
 	@XmlElement(name = "Url")
+	@JsonProperty("Url")
 	private String url;
 	
 	public LinkInMessage() {
