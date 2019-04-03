@@ -61,8 +61,6 @@ public class JsonRedisSerializer extends Jackson2JsonRedisSerializer<InMessage>{
 		} catch (Exception e) {
 			throw new SerializationException("反序列化对象出错"+e.getLocalizedMessage(),e);
 		}
-		
-//		return super.deserialize(bytes);
 	}
 
 	public ObjectMapper getObjectMapper() {
