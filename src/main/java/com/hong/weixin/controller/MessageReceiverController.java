@@ -68,10 +68,10 @@ public class MessageReceiverController {
 		Class<InMessage> cla = MessageTypeMapper.getClass(type); 
 		
 		// 使用JAXB完成XML转换为Java对象的操作
-				InMessage inMessage = JAXB.unmarshal(new StringReader(xml), cla);
+		InMessage inMessage = JAXB.unmarshal(new StringReader(xml), cla);
 
-				LOG.debug("转换得到的消息对象 \n{}\n", inMessage.toString());
-				inMessageTemplate.convertAndSend("hongzw_" + inMessage.getMsgType(), inMessage);
+		LOG.debug("转换得到的消息对象 \n{}\n", inMessage.toString());
+		inMessageTemplate.convertAndSend("hongzw_" + inMessage.getMsgType(), inMessage);
 
 		/*
 		 * // 把消息放入消息队列 inMessageTemplate.execute(new RedisCallback<String>() {

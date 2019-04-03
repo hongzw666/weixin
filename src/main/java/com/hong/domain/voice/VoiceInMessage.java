@@ -16,7 +16,6 @@ public class VoiceInMessage extends InMessage {
 	private static final long serialVersionUID = 1L;
 		@XmlElement(name = "MediaId")
 		@JsonProperty("MediaId")
-		
 		private String mediaId;
 		
 		@XmlElement(name = "Format")

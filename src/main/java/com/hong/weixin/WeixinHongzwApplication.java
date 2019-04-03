@@ -6,9 +6,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.serializer.StringRedisSerializer;
-import org.springframework.data.repository.init.Jackson2ResourceReader;
-
 import com.hong.domain.InMessage;
 import com.hong.weixin.service.JsonRedisSerializer;
 
