@@ -7,6 +7,8 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 
 @XmlAccessorType(XmlAccessType.FIELD) // JAXB从字段获取配置信息
 @XmlRootElement(name = "xml") // JAXB读取XML时根元素名称
@@ -14,18 +16,24 @@ public abstract class InMessage implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	@XmlElement(name = "ToUserName")
+	@JsonProperty("ToUserName")
 	private String toUserName;
 	
 	@XmlElement(name = "FromUserName")
+	@JsonProperty("FromUserName")
 	private String fromUserName;
 	
 	@XmlElement(name = "CreateTime")
-	private long createTime;
+	@JsonProperty("CreateTime")
+	private long  createTime;
+	
 	
 	@XmlElement(name = "MsgType")
+	@JsonProperty("MsgType")
 	private String msgType;
 	
 	@XmlElement(name = "MsgId")
+	@JsonProperty("MsgId")
 	private Long msgId;
 
 	public String getToUserName() {

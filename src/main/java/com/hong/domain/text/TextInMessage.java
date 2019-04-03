@@ -5,6 +5,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.hong.domain.InMessage;
 
 @XmlAccessorType(XmlAccessType.FIELD) // JAXB从字段获取配置信息
@@ -15,6 +16,8 @@ public class TextInMessage extends InMessage {
 	 */
 	private static final long serialVersionUID = 1L;
 	@XmlElement(name = "Content")
+	@JsonProperty("Content")
+	
 	private String content;
 	
 	public TextInMessage() {

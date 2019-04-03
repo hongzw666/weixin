@@ -1,5 +1,6 @@
 package com.hong.domain.voice;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.hong.domain.InMessage;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -14,12 +15,16 @@ public class VoiceInMessage extends InMessage {
 	 */
 	private static final long serialVersionUID = 1L;
 		@XmlElement(name = "MediaId")
+		@JsonProperty("MediaId")
+		
 		private String mediaId;
 		
 		@XmlElement(name = "Format")
+		@JsonProperty("Format")
 		private String format;
 		
 		@XmlElement(name = "Recognition")
+		@JsonProperty("Recognition")
 		private String recognition;
 		
 		public VoiceInMessage() {
