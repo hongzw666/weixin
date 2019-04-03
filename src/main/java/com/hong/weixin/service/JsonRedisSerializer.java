@@ -9,14 +9,12 @@ import java.util.Arrays;
 
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.SerializationException;
-
-import com.fasterxml.jackson.core.io.DataOutputAsStream;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hong.domain.InMessage;
 
 public class JsonRedisSerializer extends Jackson2JsonRedisSerializer<InMessage>{
 	private ObjectMapper objectMapper = new ObjectMapper();
-	
+
 	public JsonRedisSerializer() {
 		super(InMessage.class);
 	}
@@ -50,11 +48,11 @@ public class JsonRedisSerializer extends Jackson2JsonRedisSerializer<InMessage>{
 		//在写的时候，下吧类名的长度传入，此时要先得到类名的长度，再根据类名的长度类读取类名
 		try {
 			int length = inputStream.readInt();
-			byte[] classNameBytes = new  byte[length];
+			byte[] classNameBytes = new byte[length];
 			//把直接数组填满才返回
 			inputStream.readFully(classNameBytes);
 			//把读取到的字节数组，装换为类名
-			String className = new String(classNameBytes,"utf-8");
+			String className = new String(classNameBytes, "UTF-8");
 			//通过类名，加载类对象
 			@SuppressWarnings("unchecked")
 			Class<? extends InMessage> cla = (Class<? extends InMessage>) Class.forName(className);
